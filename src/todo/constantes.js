@@ -1,0 +1,5 @@
+export const ADD_TODO = 'addTodo'
+export const REMOVE_TODO = 'removeTodo'
+export const INPUT_CHANGE = 'inputChange'
+export const MARK_AS_DONE = 'markAsDone'
+export const CHANGE_DESCRIPTION = 'changeDescription'

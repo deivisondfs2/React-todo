@@ -1,14 +1,21 @@
 import React from 'react'
+
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+
 import Grid from '../template/grid'
 import IconButon from '../template/iconButon'
+import { STATUS_CODES } from 'http';
+import { changeDescription } from './todoAction'
 
-export default props => (
+const TodoForm = props => (
     <div role='form' className='todoForm'>
 
         <Grid cols='12 9 10'>
             <input type="text" name="description" className='form-control' id="description" placeholder='Adicione uma tarefa...' 
                 value={props.description}
-                onChange={props.handleChange} />
+                onChange={props.changeDescription} />
         </Grid>
         
         <Grid cols='12 3 2'>
@@ -20,3 +27,12 @@ export default props => (
         
     </div>
 )
+
+const mapStateToProps = (state) => ({
+    description : state.todo.description
+})
+
+const mapDispatchToProps = (dispatch) => 
+    bindActionCreators({changeDescription}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)
