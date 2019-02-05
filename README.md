@@ -2,6 +2,6 @@
 ## To run
 ### First run backend back end todo
 ```
-  npm instal
+  npm install
   npm run dev
 ```
